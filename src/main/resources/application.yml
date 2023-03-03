@@ -1,0 +1,71 @@
+# ===============================
+# = Hibernate datasource
+# ===============================
+server:
+  port: 8088
+  tomcat:
+    threads:
+      max: 200
+    connection-timeout: 500000
+  servlet:
+    session:
+      timeout: 500000
+  jetty:
+    connection-idle-timeout: 500000
+
+  netty:
+    connection-timeout: 500000
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/english_exam?allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: phikm1203
+
+  # ===============================
+  # = JPA configurations
+  # ===============================s
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: MYSQL
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 288474988857-6d7pmaj52tcjosi41j439h29sv2q50sa.apps.googleusercontent.com
+            client-secret: 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
+          facebook:
+            client-id: 1350896665750260
+            client-secret: 1ab3d808315d96dc7fc667e1b0f3350a
+
+# ===============================
+# = Logging configurations
+# ===============================
+#logging:
+#  level:
+#    root: WARN
+#    com.memorynotfound: DEBUG
+#    org.springframework.web: INFO
+#    org.springframework.security: INFO
+
+security:
+  jwt:
+    token:
+      secret-key: secret-key
+      expire-length: 300000 # 5 m
+
+minio:
+  bucket:
+    name: english-exam
+  access:
+    name: minioadmin
+    secret: minioadmin
+  url: http://localhost:9000
+  #url: https://113.190.54.172:9999
+  #minio.exe server D:\minio\ --console-address localhost:9001 --address 192.168.1.5:9000
+
