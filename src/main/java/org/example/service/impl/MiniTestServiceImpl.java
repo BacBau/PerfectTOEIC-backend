@@ -78,7 +78,7 @@ public class MiniTestServiceImpl implements MiniTestService {
     public ListQuestionResponse getMiniTestById(String id) {
         MiniTest miniTest = miniTestRepository.findById(id).orElseThrow(() ->
                 new EnglishExamException(ErrorCode.MINI_TEST_NOT_FOUND));
-        List<Question> questionList = questionRepository.findAllByExamIdOrderByQuestionNumber(miniTest.getPublicId());
+        List<Question> questionList = questionRepository.findAllByParentIdOrderByQuestionNumber(miniTest.getPublicId());
         List<QuestionResponse> questionResponses = questionList.stream()
                 .map(question -> questionMapper.questionToQuestionResponse(question))
                 .collect(Collectors.toList());
