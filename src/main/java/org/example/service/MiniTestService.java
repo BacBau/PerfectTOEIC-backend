@@ -8,7 +8,7 @@ import org.example.model.response.SubmitExamResponse;
 public interface MiniTestService {
     void crawMiniTest(String id);
 
-    ListExamResponse getListMiniTestResponse(int page, int size);
+    ListExamResponse getListMiniTestResponse();
 
     ListQuestionResponse getMiniTestById(String id);
 

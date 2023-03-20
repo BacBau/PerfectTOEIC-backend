@@ -1,5 +1,6 @@
 package org.example.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
@@ -34,7 +35,7 @@ public abstract class AbstractEntity implements Serializable {
 
     @CreatedDate
     @Column(name = "created_date", updatable = false)
-    @JsonIgnore
+    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss", timezone = "UTC")
     private Instant createdDate = Instant.now();
 
     @LastModifiedBy

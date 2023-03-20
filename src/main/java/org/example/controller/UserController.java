@@ -1,6 +1,9 @@
 package org.example.controller;
 
+import org.example.auth.AuthoritiesConstants;
 import org.example.config.JwtTokenUtil;
+import org.example.exception.EnglishExamException;
+import org.example.model.error.ErrorCode;
 import org.example.model.request.JwtRequest;
 import org.example.model.request.UserRegistrationRequest;
 import org.example.model.request.UserUpdateRequest;
@@ -9,7 +12,9 @@ import org.example.model.response.UserRespondDto;
 import org.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -20,6 +25,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.Map;
 
 @RestController
@@ -34,14 +40,32 @@ public class UserController {
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @Secured(AuthoritiesConstants.ROLE_ADMIN)
     @GetMapping("/list-user")
     public Map<String, Object> findAll(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "100") int size) {
         return userService.findAll(page, size);
     }
 
+    @Secured(AuthoritiesConstants.ROLE_ADMIN)
+    @PostMapping("/inactive")
+    public ResponseEntity<HttpStatus> banningUser(@RequestBody Map<String, String> body) {
+        String id = body.get("id");
+        if (id == null) throw new EnglishExamException(ErrorCode.BAD_REQUEST);
+        userService.banningUser(id);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
+    @Secured(AuthoritiesConstants.ROLE_ADMIN)
+    @PostMapping("/active")
+    public ResponseEntity<HttpStatus> unbanningUser(@RequestBody Map<String, String> body) {
+        String id = body.get("id");
+        if (id == null) throw new EnglishExamException(ErrorCode.BAD_REQUEST);
+        userService.unbanningUser(id);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
     @GetMapping
-    @PreAuthorize("hasRole('ROLE_USER')")
+    @Secured(AuthoritiesConstants.ROLE_USER)
     public UserRespondDto getCurrentUser() {
         return userService.getCurrentUser();
     }
@@ -60,7 +84,17 @@ public class UserController {
     @PostMapping("/authenticate")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 
-        authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
+        try {
+            authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
+        } catch (Exception e) {
+            if (e.getMessage().equals("INVALID_CREDENTIALS")) {
+                return ResponseEntity.badRequest().body(new HashMap<>(Map.of("message", "Thông tin đăng nhập không hợp lệ!")));
+            }
+            if (e.getMessage().equals("USER_DISABLED")) {
+                return ResponseEntity.status(403).body(new HashMap<>(Map.of("message", "USER bị khoá hoặc không có quyền truy cập!")));
+            }
+            return ResponseEntity.status(500).body(new HashMap<>(Map.of("message", "Máy chủ gặp vấn đề, vui lòng thử lại sau!!")));
+        }
 
         final UserDetails userDetails = userService
                 .loadUserByUsername(authenticationRequest.getUsername());
@@ -74,16 +108,16 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<?> saveUser(@Valid @RequestBody UserRegistrationRequest user, BindingResult result) throws Exception {
         if (result.hasErrors()) {
-            return ResponseEntity.status(400).body(result.getAllErrors().stream().map(DefaultMessageSourceResolvable::getDefaultMessage));
+            return ResponseEntity.status(400).body(new HashMap<>(Map.of("message", result.getAllErrors().stream().map(DefaultMessageSourceResolvable::getDefaultMessage))));
         }
         if (userService.findByUsername(user.getUsername()) == null) {
             try {
                 return ResponseEntity.ok(userService.save(user));
             } catch (SecurityException e) {
-                return ResponseEntity.status(401).body("Unauthorized");
+                return ResponseEntity.status(401).body(new HashMap<>(Map.of("message", "Không được phép!")));
             }
         } else {
-            return ResponseEntity.status(400).body("There is already an account registered with that username");
+            return ResponseEntity.status(400).body(new HashMap<>(Map.of("message", "Tài khoản đã được đăng ký!")));
         }
 
     }
@@ -99,7 +133,7 @@ public class UserController {
         }
     }
 
-    @PreAuthorize("hasRole('ROLE_USER')")
+    @Secured(AuthoritiesConstants.ROLE_USER)
     @PostMapping("/update")
     public ResponseEntity<?> updateInformation(@RequestBody UserUpdateRequest userUpdateDto) {
         UserRespondDto userRespondDto = userService.updateUser(userUpdateDto);
@@ -109,4 +143,12 @@ public class UserController {
         return ResponseEntity.status(200).body(userRespondDto);
     }
 
+    @Secured(AuthoritiesConstants.ROLE_ADMIN)
+    @PostMapping("/permission")
+    public ResponseEntity<HttpStatus> setAdminToUser(@RequestBody Map<String, String> body) {
+        String id = body.get("id");
+        if (id == null) throw new EnglishExamException(ErrorCode.BAD_REQUEST);
+        userService.setAdmin(id);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
 }

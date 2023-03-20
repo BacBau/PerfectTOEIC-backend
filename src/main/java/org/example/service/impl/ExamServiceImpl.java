@@ -50,8 +50,9 @@ public class ExamServiceImpl implements ExamService {
         Question questionEntity = new Question();
         JsonObject question = element.getAsJsonObject().getAsJsonObject("question");
         String text = question.get("text").getAsString();
-        String image = "https://storage.googleapis.com/" + question.get("image").getAsString();
-        String sound = question.get("sound").getAsString();
+        String originImagePath = question.get("image").getAsString();
+        String image = generateCndUrl(originImagePath);
+        String sound = generateCndUrl(question.get("sound").getAsString());
         JsonObject answer = element.getAsJsonObject().getAsJsonObject("answer");
         StringBuilder rs = new StringBuilder();
         answer.getAsJsonArray("texts").forEach(e -> rs.append(e.getAsString()).append("|"));
@@ -69,6 +70,15 @@ public class ExamServiceImpl implements ExamService {
         //for db
         questionEntity.setCreatedBy("admin");
         return questionEntity;
+    }
+
+    private static String generateCndUrl(String path) {
+        if (path == null || path.equals("")) return null;
+        if (path.startsWith("/"))
+            return "https://storage.googleapis.com" + path;
+        if (!path.startsWith("https"))
+            return "https://storage.googleapis.com/" + path;
+        return path;
     }
 
     @Override

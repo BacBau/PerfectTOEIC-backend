@@ -20,7 +20,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/english_exam?allowPublicKeyRetrieval=true&useSSL=false
     username: root
-    password: phikm1203
+    password: Byh0410***
 
   # ===============================
   # = JPA configurations
@@ -58,6 +58,14 @@ security:
     token:
       secret-key: secret-key
       expire-length: 300000 # 5 m
+app:
+  admin:
+    username: admin
+    password: admin
+
+
+solr:
+  host: http://localhost:8500/solr/
 
 minio:
   bucket:

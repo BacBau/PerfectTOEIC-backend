@@ -5,13 +5,14 @@ import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
 public class Question extends AbstractEntity {
     private String publicId;
-    @Column(length = 10000)
+    @Lob
     private String text;
     private String image;
     private String sound;

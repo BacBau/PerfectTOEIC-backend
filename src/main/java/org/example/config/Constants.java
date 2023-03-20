@@ -12,13 +12,17 @@ public class Constants {
     public static final String CHANNEL_TYPE_GROUP = "GROUP";
 
     public static String getCurrentUser() {
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String username;
-        if (principal instanceof UserDetails) {
-            username = ((UserDetails) principal).getUsername();
-        } else {
-            username = principal.toString();
+        try {
+            Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            String username;
+            if (principal instanceof UserDetails) {
+                username = ((UserDetails) principal).getUsername();
+            } else {
+                username = principal.toString();
+            }
+            return username;
+        } catch (Exception e) {
+            return null;
         }
-        return username;
     }
 }

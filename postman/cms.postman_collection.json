@@ -1,0 +1,479 @@
+{
+	"info": {
+		"_postman_id": "3e89b477-4a0a-4b5e-baf8-2dfa8aa2887a",
+		"name": "cms",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18477377"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "phân quyền admin cho user theo id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Connection",
+								"value": "keep-alive",
+								"disabled": true
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"90\", \"Google Chrome\";v=\"90\"",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJHT09HTEUxMjAzZGRwQGdtYWlsLmNvbSIsImV4cCI6MTY3NzkzNDAxMiwiaWF0IjoxNjc3OTE2MDEyfQ.pkY73uz9BxuHjAqyALcj0erVae-aWr_wANCVp-K5eSVtbt4hIcPuI2rG2agxqj4V9FWzqO1BfBIHpDJXRhb6Hw"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "vi",
+								"disabled": true
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0",
+								"disabled": true
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:3000",
+								"disabled": true
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site",
+								"disabled": true
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors",
+								"disabled": true
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty",
+								"disabled": true
+							},
+							{
+								"key": "Referer",
+								"value": "http://localhost:3000/",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":\"2d7416c9-b858-4e1f-bea7-c6c30e41f97e\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/user/permission",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"user",
+								"permission"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy danh sách user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJHT09HTEUxMjAzZGRwQGdtYWlsLmNvbSIsImV4cCI6MTY3NzkzNDAxMiwiaWF0IjoxNjc3OTE2MDEyfQ.pkY73uz9BxuHjAqyALcj0erVae-aWr_wANCVp-K5eSVtbt4hIcPuI2rG2agxqj4V9FWzqO1BfBIHpDJXRhb6Hw"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8088/user/list-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"user",
+								"list-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Khoá user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJHT09HTEUxMjAzZGRwQGdtYWlsLmNvbSIsImV4cCI6MTY3NzkzNDAxMiwiaWF0IjoxNjc3OTE2MDEyfQ.pkY73uz9BxuHjAqyALcj0erVae-aWr_wANCVp-K5eSVtbt4hIcPuI2rG2agxqj4V9FWzqO1BfBIHpDJXRhb6Hw"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":\"2d7416c9-b858-4e1f-bea7-c6c30e41f97e\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8088/user/inactive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"user",
+								"inactive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mở khoá user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJHT09HTEUxMjAzZGRwQGdtYWlsLmNvbSIsImV4cCI6MTY3NzkzNDAxMiwiaWF0IjoxNjc3OTE2MDEyfQ.pkY73uz9BxuHjAqyALcj0erVae-aWr_wANCVp-K5eSVtbt4hIcPuI2rG2agxqj4V9FWzqO1BfBIHpDJXRhb6Hw"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":\"2d7416c9-b858-4e1f-bea7-c6c30e41f97e\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8088/user/active",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"user",
+								"active"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "tạo mới post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJHT09HTEUxMjAzZGRwQGdtYWlsLmNvbSIsImV4cCI6MTY3NzkzNDAxMiwiaWF0IjoxNjc3OTE2MDEyfQ.pkY73uz9BxuHjAqyALcj0erVae-aWr_wANCVp-K5eSVtbt4hIcPuI2rG2agxqj4V9FWzqO1BfBIHpDJXRhb6Hw"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\":\"BLOG\",\n    \"title\":\"4 LÝ DO PHỤ NỮ NÊN ĐỘC LẬP TÀI CHÍNH\",\n    \"html\":\"<p>Độc lập tài chính là điều mà mọi phụ nữ nên hướng tới bởi nó không chỉ khiến bạn tự chủ hơn mà còn giúp bạn xây dựng kế hoạch tài chính trong tương lai. Ngày nay, xu hướng xã hội đang dần thay đổi, các bậc cha mẹ đang khuyến khích con cái của họ đặt mục tiêu lớn hơn, nhất là với con gái. Kiếm tiền không chỉ đơn giản là để có một lối sống sang trọng, mà còn để đạt được một mức độ độc lập tính chính nhất định. Dưới đây là 4 lý do vì sao mọi phụ nữ nên độc lập về tài chính?</p><ul><li><p><strong>Tự chủ cuộc sống</strong></p><p>Tự chủ cuộc sống có thể nâng cao giá trị bản thân và tránh phụ thuộc vào người thân xung quanh của bạn. Không chỉ vậy, bạn cũng sẽ trở thành một người tự tin hơn trong cuộc sống chỉ bằng cách tự kiếm tiền, mang lại nhiều lợi ích như:</p><p>- Cùng đóng góp với gia đình các khoản chi phí như: tiền sinh hoạt, tiền học cho con, khoản vui chơi giải trí,… Từ đó, khẳng định được vai trò cũng như trách nhiệm với gia đình của mình.</p><p>- Làm đẹp cho bản thân, tận hưởng cuộc sống là một trong những động lực to lớn giúp phụ nữ chuyên tâm kiếm tiền. Từ đó, cuộc sống của bạn sẽ trở nên ý nghĩa hơn.</p><p>- Có một khoản tiền dự trù để phòng cho những trường hợp khẩn cấp như ốm đau, mất việc,… mà không cần phải phụ thuộc vào chồng hoặc gia đình.</p><p>-Tạo ra được nguồn thu nhập thu động cho bản thân nhờ vào tự chủ tài chính.</p></li><li><p><strong>Theo kịp với chi phí sinh hoạt ngày càng tăng</strong></p><p>- Như chúng ta đã biết lạm phát tăng đều trong từng năm, cùng với đó, chi phí để sở hữu một ngôi nhà chất lượng cao, gửi con đến trường danh tiếng và duy trì mức sống trên trung bình đã tăng lên đáng kể. Phụ nữ độc lập về tài chính không chỉ đóng góp vào chi phí hàng ngày của gia đình mà còn đóng góp cho các mục tiêu tài chính dài hạn trong tương lai. </p></li><li><p><strong>Người mẹ trở thành nguồn cảm hứng cho con cái</strong></p><p>- Một người phụ nữ có khả năng đáp ứng các nhu cầu của gia đình về mặt tài chính, xã hội, tình cảm sẽ là hình mẫu giúp cho con cái học hỏi theo. Khi các con chứng kiến ​​mẹ tự lập về tài chính, các con sẽ nhận ra tầm quan trọng của đồng tiền và có động lực để tự lập khi trưởng thành.</p></li><li><p><strong>Quản lý quỹ khẩn cấp của bạn</strong></p><p>- Theo các chuyên gia tài chính, để chi tiêu luôn ở trong mức an toàn, mọi người nên tạo cho mình một quỹ khẩn cấp với số tiền đủ để trang trải cho cuộc sống từ 3 đến 6 tháng. Khoản tiết kiệm này giúp phụ nữ có thể đối mặt với những thời điểm không lường trước như: thất nghiệp, cuộc sống hôn nhân đổ vỡ,…<img src=\\\"https://cdn.stockbook.vn/images/posts/bantinlabandautudgo/medium/d2b5ca33bd970f64a6301fa75ae2eb228147.png\\\" alt=\\\"image\\\" /><br /></p></li></ul>\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8088/api/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy post theo type có phân trang",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJHT09HTEUxMjAzZGRwQGdtYWlsLmNvbSIsImV4cCI6MTY3NzkzNDAxMiwiaWF0IjoxNjc3OTE2MDEyfQ.pkY73uz9BxuHjAqyALcj0erVae-aWr_wANCVp-K5eSVtbt4hIcPuI2rG2agxqj4V9FWzqO1BfBIHpDJXRhb6Hw"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8088/api/posts/type/BLOG?page_size=10&page_index=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"posts",
+								"type",
+								"BLOG"
+							],
+							"query": [
+								{
+									"key": "page_size",
+									"value": "10"
+								},
+								{
+									"key": "page_index",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "xoá post theo id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJHT09HTEUxMjAzZGRwQGdtYWlsLmNvbSIsImV4cCI6MTY3NzkzNDAxMiwiaWF0IjoxNjc3OTE2MDEyfQ.pkY73uz9BxuHjAqyALcj0erVae-aWr_wANCVp-K5eSVtbt4hIcPuI2rG2agxqj4V9FWzqO1BfBIHpDJXRhb6Hw"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8088/api/post/694c072e-5cb2-4726-b781-a0526b1ab14a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"post",
+								"694c072e-5cb2-4726-b781-a0526b1ab14a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cập nhật post",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJHT09HTEUxMjAzZGRwQGdtYWlsLmNvbSIsImV4cCI6MTY3NzkzNDAxMiwiaWF0IjoxNjc3OTE2MDEyfQ.pkY73uz9BxuHjAqyALcj0erVae-aWr_wANCVp-K5eSVtbt4hIcPuI2rG2agxqj4V9FWzqO1BfBIHpDJXRhb6Hw"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":\"e9ca94b6-7761-46cb-9466-7411cf8a795a\",\n    \"type\":\"BLOG\",\n    \"title\":\"4 LÝ DO PHỤ NÊN ĐỘC LẬP TÀI CHÍNH\",\n    \"html\":\"<p>Độc lập tài chính là điều mà mọi phụ nữ nên hướng tới bởi nó không chỉ khiến bạn tự chủ hơn mà còn giúp bạn xây dựng kế hoạch tài chính trong tương lai. Ngày nay, xu hướng xã hội đang dần thay đổi, các bậc cha mẹ đang khuyến khích con cái của họ đặt mục tiêu lớn hơn, nhất là với con gái. Kiếm tiền không chỉ đơn giản là để có một lối sống sang trọng, mà còn để đạt được một mức độ độc lập tính chính nhất định. Dưới đây là 4 lý do vì sao mọi phụ nữ nên độc lập về tài chính?</p><ul><li><p><strong>Tự chủ cuộc sống</strong></p><p>Tự chủ cuộc sống có thể nâng cao giá trị bản thân và tránh phụ thuộc vào người thân xung quanh của bạn. Không chỉ vậy, bạn cũng sẽ trở thành một người tự tin hơn trong cuộc sống chỉ bằng cách tự kiếm tiền, mang lại nhiều lợi ích như:</p><p>- Cùng đóng góp với gia đình các khoản chi phí như: tiền sinh hoạt, tiền học cho con, khoản vui chơi giải trí,… Từ đó, khẳng định được vai trò cũng như trách nhiệm với gia đình của mình.</p><p>- Làm đẹp cho bản thân, tận hưởng cuộc sống là một trong những động lực to lớn giúp phụ nữ chuyên tâm kiếm tiền. Từ đó, cuộc sống của bạn sẽ trở nên ý nghĩa hơn.</p><p>- Có một khoản tiền dự trù để phòng cho những trường hợp khẩn cấp như ốm đau, mất việc,… mà không cần phải phụ thuộc vào chồng hoặc gia đình.</p><p>-Tạo ra được nguồn thu nhập thu động cho bản thân nhờ vào tự chủ tài chính.</p></li><li><p><strong>Theo kịp với chi phí sinh hoạt ngày càng tăng</strong></p><p>- Như chúng ta đã biết lạm phát tăng đều trong từng năm, cùng với đó, chi phí để sở hữu một ngôi nhà chất lượng cao, gửi con đến trường danh tiếng và duy trì mức sống trên trung bình đã tăng lên đáng kể. Phụ nữ độc lập về tài chính không chỉ đóng góp vào chi phí hàng ngày của gia đình mà còn đóng góp cho các mục tiêu tài chính dài hạn trong tương lai. </p></li><li><p><strong>Người mẹ trở thành nguồn cảm hứng cho con cái</strong></p><p>- Một người phụ nữ có khả năng đáp ứng các nhu cầu của gia đình về mặt tài chính, xã hội, tình cảm sẽ là hình mẫu giúp cho con cái học hỏi theo. Khi các con chứng kiến ​​mẹ tự lập về tài chính, các con sẽ nhận ra tầm quan trọng của đồng tiền và có động lực để tự lập khi trưởng thành.</p></li><li><p><strong>Quản lý quỹ khẩn cấp của bạn</strong></p><p>- Theo các chuyên gia tài chính, để chi tiêu luôn ở trong mức an toàn, mọi người nên tạo cho mình một quỹ khẩn cấp với số tiền đủ để trang trải cho cuộc sống từ 3 đến 6 tháng. Khoản tiết kiệm này giúp phụ nữ có thể đối mặt với những thời điểm không lường trước như: thất nghiệp, cuộc sống hôn nhân đổ vỡ,…<img src=\\\"https://cdn.stockbook.vn/images/posts/bantinlabandautudgo/medium/d2b5ca33bd970f64a6301fa75ae2eb228147.png\\\" alt=\\\"image\\\" /><br /></p></li></ul>\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8088/api/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJHT09HTEUxMjAzZGRwQGdtYWlsLmNvbSIsImV4cCI6MTY3NzkzNDAxMiwiaWF0IjoxNjc3OTE2MDEyfQ.pkY73uz9BxuHjAqyALcj0erVae-aWr_wANCVp-K5eSVtbt4hIcPuI2rG2agxqj4V9FWzqO1BfBIHpDJXRhb6Hw"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8088/api/post/{postId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"post",
+								"{postId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "search",
+			"item": [
+				{
+					"name": "api search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJHT09HTEUxMjAzZGRwQGdtYWlsLmNvbSIsImV4cCI6MTY3Nzk1MjEyMSwiaWF0IjoxNjc3OTM0MTIxfQ.YgTAKahyb7EQYejNssnlaP9GHeq45xzXZjApOiGgK5Z267-g5XachtlFovJo4ThPkufNCdeue4t_7kIZJ22T9Q"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8088/api/posts/search?keyword=ly do phu nu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"api",
+								"posts",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "ly do phu nu"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mini test",
+			"item": [
+				{
+					"name": "lấy danh sách mini test",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY3ODA0OTM5NiwiaWF0IjoxNjc4MDMxMzk2fQ.PKx6107pMv3jyjb4JjcY-SmRMIwNPKzzUZvBQawzgrOsc8l7ZJPvgTZjDNSMcqJTzzdd1NXaH2iiyh4frotxpw"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8088/minitest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"minitest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lấy danh sách câu hỏi",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY3ODA0OTM5NiwiaWF0IjoxNjc4MDMxMzk2fQ.PKx6107pMv3jyjb4JjcY-SmRMIwNPKzzUZvBQawzgrOsc8l7ZJPvgTZjDNSMcqJTzzdd1NXaH2iiyh4frotxpw"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8088/minitest/104b8410-f87d-4563-aaaf-e5560c6fcb7a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"minitest",
+								"104b8410-f87d-4563-aaaf-e5560c6fcb7a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

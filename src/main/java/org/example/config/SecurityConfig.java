@@ -33,7 +33,7 @@ import java.util.List;
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -68,7 +68,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.cors().and().csrf().disable()
-                .authorizeRequests().antMatchers("/**", "/*", "*").permitAll()
+                .authorizeRequests().antMatchers("/user/authenticate", "/user/register", "/oauth_login",
+                        "/api/post/**", "/api/posts/**", "/api/post", "/api/posts", "/api/home/introduction", "/api/posts/search").permitAll()
                 .anyRequest().authenticated()
                 .and().exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
                 .and().formLogin().permitAll()
@@ -103,7 +104,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                         final String token = jwtTokenUtil.generateToken(provider.name() + email);
 
-                        response.sendRedirect("http://localhost:3000?token=" + token);
+                        response.sendRedirect("http://localhost:3000/login?token=" + token);
                     }
                 })
                 .and().sessionManagement()

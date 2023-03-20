@@ -1,6 +1,5 @@
 package org.example.service;
 
-import org.example.model.entity.Question;
 import org.example.repository.QuestionRepository;
 import org.springframework.stereotype.Service;
 
@@ -11,13 +10,16 @@ public class CrawJob {
     private final PartService partService;
     private final QuestionRepository questionRepository;
     private final ExamService examService;
+    private final MiniTestService miniTestService;
 
     public CrawJob(PartService partService,
                    QuestionRepository questionRepository,
-                   ExamService examService) {
+                   ExamService examService,
+                   MiniTestService miniTestService) {
         this.partService = partService;
         this.questionRepository = questionRepository;
         this.examService = examService;
+        this.miniTestService = miniTestService;
     }
 
     @PostConstruct
@@ -41,6 +43,13 @@ public class CrawJob {
         examService.crawExam("62b69492bbc57b27fe10f7ac");
         examService.crawExam("62b6b89bbbc57b27fe10fc20");
         examService.crawExam("62b6be4fbbc57b27fe10fee2");
+        miniTestService.crawMiniTest("63b7e86fe1ae0763714f09cc");
+        miniTestService.crawMiniTest("63b7e86fe1ae0763714f09cb");
+        miniTestService.crawMiniTest("62b3dee2bbc57b27fe103b72");
+        miniTestService.crawMiniTest("62b3e5c1bbc57b27fe103dbe");
+        miniTestService.crawMiniTest("62b421a9bbc57b27fe1054c8");
+        miniTestService.crawMiniTest("62b43624bbc57b27fe105bbf");
+        miniTestService.crawMiniTest("62b516bfbbc57b27fe108f64");
 
     }
 }

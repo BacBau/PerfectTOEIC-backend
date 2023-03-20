@@ -25,7 +25,10 @@ public interface UserService extends UserDetailsService {
     UserRespondDto updateUser(UserUpdateRequest userUpdateDto);
 
     List<UserRespondDto> searchUser(String key);
+    void banningUser(String id);
+    void unbanningUser(String id);
 
     void processOAuthPostLogin(String username, String name, String avatar, User.Provider provider);
+    void setAdmin(String id);
 
 }
