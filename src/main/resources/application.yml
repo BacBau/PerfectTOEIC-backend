@@ -20,7 +20,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/english_exam?allowPublicKeyRetrieval=true&useSSL=false
     username: root
-    password: phikm1203
+    password: Byh0410***
 
   # ===============================
   # = JPA configurations

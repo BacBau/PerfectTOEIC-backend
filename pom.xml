@@ -31,6 +31,24 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web-services</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.googlecode.owasp-java-html-sanitizer</groupId>
+            <artifactId>owasp-java-html-sanitizer</artifactId>
+            <version>20211018.2</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.robbypond</groupId>
+            <artifactId>boilerpipe</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.solr/solr-core -->
+        <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-core</artifactId>
+            <version>8.11.1</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
