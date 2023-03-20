@@ -1,0 +1,90 @@
+2023-03-20 13:15:43.552 INFO  (main) [   ] o.e.j.u.log Logging initialized @3093ms to org.eclipse.jetty.util.log.Slf4jLog
+2023-03-20 13:15:44.068 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.44.v20210927; built: 2021-09-27T23:02:44.612Z; git: 8da83308eeca865e495e53ef315a249d63ba9332; jvm 11.0.17+10-LTS-269
+2023-03-20 13:15:44.083 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Users/admin/Desktop/Project/cms-project/solr/solr-8.11.2/server/contexts/] at interval 0
+2023-03-20 13:15:45.458 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+2023-03-20 13:15:45.474 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
+2023-03-20 13:15:45.474 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
+2023-03-20 13:15:45.474 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 660000ms
+2023-03-20 13:15:45.568 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2023-03-20 13:15:45.568 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.11.2
+2023-03-20 13:15:45.568 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8500
+2023-03-20 13:15:45.568 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Users\admin\Desktop\Project\cms-project\solr\solr-8.11.2
+2023-03-20 13:15:45.568 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2023-03-20T13:15:45.568209500Z
+2023-03-20 13:15:45.615 INFO  (main) [   ] o.a.s.c.SolrPaths Using system property solr.solr.home: C:\Users\admin\Desktop\Project\cms-project\solr\solr-8.11.2\server\solr
+2023-03-20 13:15:45.615 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\Users\admin\Desktop\Project\cms-project\solr\solr-8.11.2\server\solr\solr.xml
+2023-03-20 13:15:45.708 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@528c868, but no JMX reporters were configured - adding default JMX reporter.
+2023-03-20 13:15:46.490 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory Host whitelist initialized: WhitelistHostChecker [whitelistHosts=null, whitelistHostCheckingEnabled=true]
+2023-03-20 13:15:46.755 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@1687eb01[provider=null,keyStore=null,trustStore=null]
+2023-03-20 13:15:46.755 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@1687eb01[provider=null,keyStore=null,trustStore=null]
+2023-03-20 13:15:47.036 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@58437801[provider=null,keyStore=null,trustStore=null]
+2023-03-20 13:15:47.036 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@58437801[provider=null,keyStore=null,trustStore=null]
+2023-03-20 13:15:47.239 WARN  (main) [   ] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
+2023-03-20 13:15:47.505 INFO  (main) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient core cache for max 2147483647 cores with initial capacity of 1024
+2023-03-20 13:15:47.505 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
+2023-03-20 13:15:47.630 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@528c868
+2023-03-20 13:15:47.630 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@528c868
+2023-03-20 13:15:47.630 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@528c868
+2023-03-20 13:15:47.693 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 1 core definitions underneath C:\Users\admin\Desktop\Project\cms-project\solr\solr-8.11.2\server\solr
+2023-03-20 13:15:47.693 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [post]
+2023-03-20 13:15:47.771 INFO  (coreLoadExecutor-13-thread-1) [   x:post] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.11.2
+2023-03-20 13:15:47.818 WARN  (coreLoadExecutor-13-thread-1) [   x:post] o.a.s.c.SolrConfig solrconfig.xml: <jmx> is no longer supported, use solr.xml:/metrics/reporter section instead
+2023-03-20 13:15:47.943 INFO  (coreLoadExecutor-13-thread-1) [   x:post] o.a.s.s.IndexSchema Schema name=default-config
+2023-03-20 13:15:48.427 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@308a6984{/solr,file:///C:/Users/admin/Desktop/Project/cms-project/solr/solr-8.11.2/server/solr-webapp/webapp/,AVAILABLE}{C:\Users\admin\Desktop\Project\cms-project\solr\solr-8.11.2\server/solr-webapp/webapp}
+2023-03-20 13:15:48.505 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@2f2bf0e2{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8500}
+2023-03-20 13:15:48.505 INFO  (main) [   ] o.e.j.s.Server Started @8042ms
+2023-03-20 13:15:48.849 INFO  (coreLoadExecutor-13-thread-1) [   x:post] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2023-03-20 13:15:49.021 INFO  (coreLoadExecutor-13-thread-1) [   x:post] o.a.s.c.CoreContainer Creating SolrCore 'post' using configuration from instancedir C:\Users\admin\Desktop\Project\cms-project\solr\solr-8.11.2\server\solr\post, trusted=true
+2023-03-20 13:15:49.067 INFO  (coreLoadExecutor-13-thread-1) [   x:post] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.post' (registry 'solr.core.post') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@528c868
+2023-03-20 13:15:49.099 INFO  (qtp1767230265-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=68
+2023-03-20 13:15:49.099 INFO  (coreLoadExecutor-13-thread-1) [   x:post] o.a.s.c.SolrCore [[post] ] Opening new SolrCore at [C:\Users\admin\Desktop\Project\cms-project\solr\solr-8.11.2\server\solr\post], dataDir=[C:\Users\admin\Desktop\Project\cms-project\solr\solr-8.11.2\server\solr\post\data\]
+2023-03-20 13:15:50.739 INFO  (coreLoadExecutor-13-thread-1) [   x:post] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2023-03-20 13:15:50.739 INFO  (coreLoadExecutor-13-thread-1) [   x:post] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2023-03-20 13:15:50.770 INFO  (coreLoadExecutor-13-thread-1) [   x:post] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2023-03-20 13:15:50.770 INFO  (coreLoadExecutor-13-thread-1) [   x:post] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2023-03-20 13:15:50.880 INFO  (coreLoadExecutor-13-thread-1) [   x:post] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\admin\Desktop\Project\cms-project\solr\solr-8.11.2\server\solr\post\conf
+2023-03-20 13:15:50.895 INFO  (coreLoadExecutor-13-thread-1) [   x:post] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2023-03-20 13:15:50.911 INFO  (coreLoadExecutor-13-thread-1) [   x:post] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxQueryFrequency=0.01,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4}
+2023-03-20 13:15:50.942 INFO  (coreLoadExecutor-13-thread-1) [   x:post] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2023-03-20 13:15:50.942 INFO  (coreLoadExecutor-13-thread-1) [   x:post] o.a.s.u.UpdateLog Could not find max version in index or recent updates, using new clock 1760892709442158592
+2023-03-20 13:15:50.958 INFO  (searcherExecutor-15-thread-1-processing-x:post) [   x:post] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2023-03-20 13:15:50.958 INFO  (searcherExecutor-15-thread-1-processing-x:post) [   x:post] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2023-03-20 13:15:50.974 INFO  (searcherExecutor-15-thread-1-processing-x:post) [   x:post] o.a.s.c.SolrCore [post]  Registered new searcher autowarm time: 0 ms
+2023-03-20 13:16:09.105 INFO  (qtp1767230265-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1679317710610} status=0 QTime=3
+2023-03-20 13:16:09.141 INFO  (qtp1767230265-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1679317710610} status=0 QTime=38
+2023-03-20 13:16:09.215 INFO  (qtp1767230265-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1679317710610} status=0 QTime=28
+2023-03-20 13:16:11.051 INFO  (qtp1767230265-22) [   x:post] o.a.s.c.S.Request [post]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1679317710610&ts=1679317710610} status=503 QTime=2
+2023-03-20 13:16:11.054 INFO  (qtp1767230265-20) [   x:post] o.a.s.c.S.Request [post]  webapp=/solr path=/replication params={wt=json&command=details&_=1679317712798} status=0 QTime=8
+2023-03-20 13:16:11.061 INFO  (qtp1767230265-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1679317710610} status=0 QTime=0
+2023-03-20 13:16:11.071 INFO  (qtp1767230265-20) [   x:post] o.a.s.c.S.Request [post]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1679317712797} status=0 QTime=8
+2023-03-20 13:16:11.111 INFO  (qtp1767230265-23) [   x:post] o.a.s.c.S.Request [post]  webapp=/solr path=/admin/system params={wt=json&_=1679317712798} status=0 QTime=64
+2023-03-20 13:16:11.119 INFO  (qtp1767230265-24) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1679317710610} status=0 QTime=56
+2023-03-20 13:16:13.026 INFO  (qtp1767230265-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1679317710610} status=0 QTime=0
+2023-03-20 13:16:13.065 INFO  (qtp1767230265-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1679317710610} status=0 QTime=33
+2023-03-20 13:16:14.727 INFO  (qtp1767230265-24) [   x:post] o.a.s.c.S.Request [post]  webapp=/solr path=/select params={q=*:*&indent=true&q.op=OR&_=1679317715058} hits=0 status=0 QTime=62
+2023-03-20 13:16:14.820 INFO  (qtp1767230265-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1679317710610} status=0 QTime=0
+2023-03-20 13:16:14.828 INFO  (qtp1767230265-21) [   x:post] o.a.s.c.S.Request [post]  webapp=/solr path=/select params={q=*:*&indent=true&q.op=OR&_=1679317715058} hits=0 status=0 QTime=2
+2023-03-20 13:16:14.856 INFO  (qtp1767230265-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1679317710610} status=0 QTime=32
+2023-03-20 13:16:15.115 INFO  (qtp1767230265-24) [   x:post] o.a.s.c.S.Request [post]  webapp=/solr path=/select params={q=*:*&indent=true&q.op=OR&_=1679317715058} hits=0 status=0 QTime=1
+2023-03-20 13:16:15.452 INFO  (qtp1767230265-22) [   x:post] o.a.s.c.S.Request [post]  webapp=/solr path=/select params={q=*:*&indent=true&q.op=OR&_=1679317715058} hits=0 status=0 QTime=0
+2023-03-20 13:18:09.000 INFO  (qtp1767230265-24) [   x:post] o.a.s.u.p.LogUpdateProcessorFactory [post]  webapp=/solr path=/update params={commitWithin=1000&overwrite=true&wt=json}{deleteByQuery=*:* (-1760892854172909568)} 0 91
+2023-03-20 13:18:12.812 INFO  (qtp1767230265-22) [   x:post] o.a.s.u.p.LogUpdateProcessorFactory [post]  webapp=/solr path=/update params={wt=javabin&version=2}{add=[0f36edcc-ee0a-41a3-9eb2-85bb9ed0e20c (1760892858088292352)]} 0 119
+2023-03-20 13:18:12.859 INFO  (qtp1767230265-24) [   x:post] o.a.s.u.p.LogUpdateProcessorFactory [post]  webapp=/solr path=/update params={wt=javabin&version=2}{add=[b15c8f95-56d7-4a9c-acf7-bef5ab7417a9 (1760892858236141568)]} 0 6
+2023-03-20 13:18:12.890 INFO  (qtp1767230265-23) [   x:post] o.a.s.u.p.LogUpdateProcessorFactory [post]  webapp=/solr path=/update params={wt=javabin&version=2}{add=[f10f571d-783c-490b-b191-8db0040c2307 (1760892858268647424)]} 0 7
+2023-03-20 13:18:12.921 INFO  (qtp1767230265-24) [   x:post] o.a.s.u.p.LogUpdateProcessorFactory [post]  webapp=/solr path=/update params={wt=javabin&version=2}{add=[a8af436b-a6ee-4b89-8a03-47bb86a73ea4 (1760892858317930496)]} 0 11
+2023-03-20 13:18:12.937 INFO  (qtp1767230265-23) [   x:post] o.a.s.u.p.LogUpdateProcessorFactory [post]  webapp=/solr path=/update params={wt=javabin&version=2}{add=[e7a6998d-4d1d-4601-a583-7fa60b805cac (1760892858334707712)]} 0 5
+2023-03-20 13:18:12.968 INFO  (qtp1767230265-24) [   x:post] o.a.s.u.p.LogUpdateProcessorFactory [post]  webapp=/solr path=/update params={wt=javabin&version=2}{add=[a4b10d6f-cbea-4bae-9d11-ce14efbfacc5 (1760892858367213568)]} 0 8
+2023-03-20 13:18:13.015 INFO  (qtp1767230265-23) [   x:post] o.a.s.u.p.LogUpdateProcessorFactory [post]  webapp=/solr path=/update params={wt=javabin&version=2}{add=[5ae72c90-a765-4260-81a7-a03879fbb786 (1760892858383990784)]} 0 27
+2023-03-20 13:18:13.030 INFO  (qtp1767230265-24) [   x:post] o.a.s.u.p.LogUpdateProcessorFactory [post]  webapp=/solr path=/update params={wt=javabin&version=2}{add=[91b0ad05-0841-44c8-8f6a-bfdbfc3df654 (1760892858432225280)]} 0 4
+2023-03-20 13:18:13.062 INFO  (qtp1767230265-23) [   x:post] o.a.s.u.p.LogUpdateProcessorFactory [post]  webapp=/solr path=/update params={wt=javabin&version=2}{add=[f787ed17-4268-4b95-ac3c-94f2d31333dd (1760892858465779712)]} 0 6
+2023-03-20 13:18:13.077 INFO  (qtp1767230265-24) [   x:post] o.a.s.u.p.LogUpdateProcessorFactory [post]  webapp=/solr path=/update params={wt=javabin&version=2}{add=[cb74ca15-ecab-4265-80cc-4c7885204db6 (1760892858481508352)]} 0 3
+2023-03-20 13:18:13.109 INFO  (qtp1767230265-23) [   x:post] o.a.s.u.p.LogUpdateProcessorFactory [post]  webapp=/solr path=/update params={wt=javabin&version=2}{add=[72ec6b88-9b3a-415e-bf31-64753f05ca04 (1760892858515062784)]} 0 4
+2023-03-20 13:18:13.124 INFO  (qtp1767230265-24) [   x:post] o.a.s.u.p.LogUpdateProcessorFactory [post]  webapp=/solr path=/update params={wt=javabin&version=2}{add=[74fe1d57-50bd-4fca-b89f-2700eecf90ec (1760892858530791424)]} 0 13
+2023-03-20 13:18:14.296 INFO  (qtp1767230265-23) [   x:post] o.a.s.u.p.LogUpdateProcessorFactory [post]  webapp=/solr path=/update params={waitSearcher=false&commit=true&softCommit=false&wt=javabin&version=2}{commit=} 0 1162
+2023-03-20 13:18:14.312 INFO  (searcherExecutor-15-thread-1-processing-x:post) [   x:post] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2023-03-20 13:18:14.312 INFO  (searcherExecutor-15-thread-1-processing-x:post) [   x:post] o.a.s.c.SolrCore [post]  Registered new searcher autowarm time: 6 ms
+2023-03-20 13:18:17.420 INFO  (qtp1767230265-21) [   x:post] o.a.s.c.S.Request [post]  webapp=/solr path=/select params={q=*:*&indent=true&q.op=OR&_=1679317715058} hits=12 status=0 QTime=7
+2023-03-20 13:18:23.770 INFO  (qtp1767230265-21) [   x:post] o.a.s.c.S.Request [post]  webapp=/solr path=/select params={q=dataSearchVi:(*-*+)&start=0&q.op=AND&rows=10000&wt=javabin&version=2} hits=12 status=0 QTime=82
+2023-03-20 13:26:45.262 INFO  (qtp1767230265-20) [   x:post] o.a.s.u.p.LogUpdateProcessorFactory [post]  webapp=/solr path=/update params={wt=javabin&version=2}{add=[3d1cb6e1-f4bf-4b1b-8fb1-e6401189ca52 (1760893395546406912)]} 0 7
+2023-03-20 13:26:45.590 INFO  (qtp1767230265-17) [   x:post] o.a.s.u.p.LogUpdateProcessorFactory [post]  webapp=/solr path=/update params={waitSearcher=false&commit=true&softCommit=false&wt=javabin&version=2}{commit=} 0 327
+2023-03-20 13:26:45.590 INFO  (searcherExecutor-15-thread-1-processing-x:post) [   x:post] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2023-03-20 13:26:45.606 INFO  (searcherExecutor-15-thread-1-processing-x:post) [   x:post] o.a.s.c.SolrCore [post]  Registered new searcher autowarm time: 0 ms

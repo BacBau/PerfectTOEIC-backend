@@ -20,7 +20,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/english_exam?allowPublicKeyRetrieval=true&useSSL=false
     username: root
-    password: Byh0410***
+    password: phikm1203
 
   # ===============================
   # = JPA configurations
@@ -28,7 +28,7 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     database-platform: MYSQL
     properties:
       hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
