@@ -14,6 +14,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Data
 @MappedSuperclass
@@ -35,7 +36,7 @@ public abstract class AbstractEntity implements Serializable {
 
     @CreatedDate
     @Column(name = "created_date", updatable = false)
-    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss", timezone = "UTC")
+    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss", timezone = "Asia/Ho_Chi_Minh")
     private Instant createdDate = Instant.now();
 
     @LastModifiedBy
